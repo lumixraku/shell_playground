@@ -10,7 +10,12 @@ pid=`lsof -i:$port | sed -n '2p' | awk '{printf "%s\n", $2}'`
 echo $pid
 
 #kill
-if [ ! -n $pid ]; then
+
+#kill
+echo ${#pid}
+if [ ${#pid} -gt 0 ]; then
     echo 'kill'
+    echo $pid
     killcmd=`kill -9 $pid`
 fi
+

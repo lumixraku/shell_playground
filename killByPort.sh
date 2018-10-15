@@ -16,11 +16,10 @@ then
     pid=`echo $pidrs | awk '{printf "%s\n", $2}'`
     echo "pid=$pid"
 fi
-
-
 #kill
-if [ -n $pid ]; then
+echo ${#pid}
+if [ ${#pid} -gt 0 ]; then
     echo 'kill'
+    echo $pid
     killcmd=`kill -9 $pid`
 fi
-
